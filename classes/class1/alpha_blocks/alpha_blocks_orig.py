@@ -54,7 +54,7 @@ True
 '''
 
 def can_make_word(word):
-   blocks = [('B', 'O'),
+    blocks = [('B', 'O'),
       ('X', 'K'),
       ('D', 'Q'),
       ('C', 'P'),
@@ -75,20 +75,10 @@ def can_make_word(word):
       ('P', 'C'),
       ('Z', 'M')]
 
-   can_make = True
    for letter in word:
-      block_length = len(blocks)
-
       for block in blocks:
          if letter in block:
-            blocks.remove(block)
-            break
+            # use block
 
-      if len(blocks) == block_length:
-         can_make = False
-         break
 
-   return can_make
-
-if __name__ == '__main__':
-   can_make_word('TREAT')
+            

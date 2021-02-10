@@ -11,8 +11,8 @@ class TestAlphaBlocks(unittest.TestCase):
         self.assertEqual(True, can_make_word("CONFUSE"))
     
     def test_disallowed_words(self):
-        self.assertEqual(True, can_make_word("BOOK"))
-        self.assertEqual(True, can_make_word("COMMON"))    
+        self.assertEqual(False, can_make_word("BOOK"))
+        self.assertEqual(False, can_make_word("COMMON"))    
 
 if __name__ == '__main__':
     unittest.main()  # pragma: no cover

@@ -55,40 +55,47 @@ True
 
 def can_make_word(word):
    blocks = [('B', 'O'),
-      ('X', 'K'),
-      ('D', 'Q'),
-      ('C', 'P'),
-      ('N', 'A'),
-      ('G', 'T'),
-      ('R', 'E'),
-      ('T', 'G'),
-      ('Q', 'D'),
-      ('F', 'S'),
-      ('J', 'W'),
-      ('H', 'U'),
-      ('V', 'I'),
-      ('A', 'N'),
-      ('O', 'B'),
-      ('E', 'R'),
-      ('F', 'S'),
-      ('L', 'Y'),
-      ('P', 'C'),
-      ('Z', 'M')]
+         ('X', 'K'),
+         ('D', 'Q'),
+         ('C', 'P'),
+         ('N', 'A'),
+         ('G', 'T'),
+         ('R', 'E'),
+         ('T', 'G'),
+         ('Q', 'D'),
+         ('F', 'S'),
+         ('J', 'W'),
+         ('H', 'U'),
+         ('V', 'I'),
+         ('A', 'N'),
+         ('O', 'B'),
+         ('E', 'R'),
+         ('F', 'S'),
+         ('L', 'Y'),
+         ('P', 'C'),
+         ('Z', 'M')]
 
+   print("Length of :" + str(len(blocks)))
+   print("Start word: " + word + "\n")
    can_make = True
    for letter in word:
-      block_length = len(blocks)
-
+      print("pass 1: " + letter)
       for block in blocks:
          if letter in block:
-            blocks.remove(block)
-            break
-
-      if len(blocks) == block_length:
-         can_make = False
-         break
-
-   return can_make
-
-if __name__ == '__main__':
-   can_make_word('TREAT')
+               print("Block 1:" + str(block))
+               print("Length of :" + str(len(blocks)))
+               print("The letter is: " + letter )
+               blocks.remove(block)
+               print("Length of :" + str(len(blocks)))
+               can_make = True
+               break
+         else:
+               can_make = False
+               break
+         
+   if can_make:
+      print("Word Made")
+      return True
+   else:
+      print("Word not made")
+      return False          
