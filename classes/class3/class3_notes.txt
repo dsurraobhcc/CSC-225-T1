@@ -1,0 +1,30 @@
+XML
+RSS READER
+
+API (application programming interface)
+
+never include passwords or secrets in code
+
+reading XML and JSON
+
+urllib, json, XMLElement
+
+
+https://sandbox.iexapis.com
+
+/stable/stock/aapl/batch
+
+?
+
+querystring parameters
+
+types=quote,news,chart
+&range=1m
+&last=10
+&token=...
+
+anatomy of an http request:
+base url
+path 
+parameters
+
