@@ -1,0 +1,13 @@
+Django
+
+Define models: objects with data
+Models are classes
+Data is saved to a database
+
+Define views: pages 
+- that display data
+- that are forms used to update data
+
+Point to views using URLs: Routing
+
+Templates for your views: HTML
