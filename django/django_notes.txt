@@ -5,7 +5,8 @@ mkdir mysite
 Create a virtual environment:
 python3 -m venv mysite_env
 
-source mysite_env/bin/activate
+source mysite_env/bin/activate (unix)
+source mysite_env\bin\activate (windows)
 
 pip3 install django
 
