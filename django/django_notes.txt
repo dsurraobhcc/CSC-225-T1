@@ -6,7 +6,7 @@ Create a virtual environment:
 python3 -m venv mysite_env
 
 source mysite_env/bin/activate (unix)
-source mysite_env\bin\activate (windows)
+source mysite_env\Scripts\activate (windows)
 
 pip3 install django
 
