@@ -1,0 +1,13 @@
+Question: "what's up?"
+
+Answer: 
+	"The sky" -- "userA"
+	"Not much" -- "userB"
+	"Not much" -- "userC"
+
+Recap
+1. Modified model with new field
+2. Created and applied migrations to update the db
+3. Modified form view to accept new field
+4. Modified the action to save new field data
+5. Updated HTML with CSS for styling

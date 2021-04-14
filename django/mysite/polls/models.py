@@ -17,7 +17,14 @@ class Question(models.Model):
 class Choice(models.Model):
     question = models.ForeignKey(Question, on_delete=models.CASCADE)
     choice_text = models.CharField(max_length=200)
-    votes = models.IntegerField(default=0)
+    votes = models.IntegerField(default=0) # todo: remove
 
     def __str__(self):
         return f'{self.choice_text} {self.votes}' 
+
+class Answer(models.Model):
+    choice = models.ForeignKey(Choice, on_delete=models.CASCADE)
+    username = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.username
