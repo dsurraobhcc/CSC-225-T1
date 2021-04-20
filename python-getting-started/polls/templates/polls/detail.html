@@ -1,0 +1,42 @@
+{% extends "polls/base.html" %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    </head>
+
+    <body style="background-color:powderblue;font-size:30px;">
+        <h1>{{ question.question_text }}</h1>
+
+        {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+        <form action="{% url 'polls:vote' question.id %}" method="post">
+            {% csrf_token %}
+            {% for choice in question.choice_set.all %}
+                <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}">
+                <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br>
+            {% endfor %}
+
+            <p>
+                <label>
+                    Please enter your name (leave blank if you want to be anonymous):
+                    <input type="text" name="username">
+                </label>
+            </p>
+            <p>
+                <input type="submit" value="Vote" class="favorite styled">
+            </p>
+        </form>
+
+        <p>
+            <a href="{% url 'polls:results' question.id%}">View current responses</a>
+        </p>
+        <p>
+            <a href="{% url 'polls:index' %}">Go back to main page</a>
+        </p>
+    </body>
+</html>
+
+{% endblock content %}

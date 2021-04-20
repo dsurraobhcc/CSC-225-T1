@@ -1,0 +1,35 @@
+{% extends "polls/base.html" %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    </head>
+    <body style="background-color:powderblue;font-size:30px; ">
+        <h1>{{ question.question_text }}</h1>
+
+        <!-- <ul style="color:blue;">
+        {% for choice in question.choice_set.all %}
+            <li>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
+        {% endfor %}
+        </ul> -->
+
+        <ul style="color:blue;">
+            {% for choice in question.choice_set.all %}
+                {% for answer in choice.answer_set.all %}
+                    <li>{{ choice.choice_text }} -- {{ answer.username }}</li>
+                {% endfor %}
+            {% endfor %}
+            </ul>
+
+        <p>
+            <a style="color:red;" href="{% url 'polls:detail' question.id %}">Vote again?</a>
+        </p>
+        <p>
+            <a href="{% url 'polls:index'%}">Go back to main page</a>
+        </p>
+
+    </body>
+</html>
+{% endblock content %}
