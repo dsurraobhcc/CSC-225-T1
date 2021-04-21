@@ -1,0 +1,23 @@
+Steps to build and deploy a web app in Django:
+
+1. installed heroku and git locally
+2. added a polls app from the django tutorial
+3. pushed code changes to heroku
+4. ran migrations of data models locally and in heroku (question, choice)
+
+5. heroku run python manage.py createsuperuser
+6. created a second user from the admin console
+
+Continuous Integration (CI/CD)
+make code changes locally
+git push heroku main
+updates the website
+
+Database: 
+locally: using SQLite3
+heroku: using Postgres
+Advantage of models: ORM (object-relational mapper)
+
+
+
+
