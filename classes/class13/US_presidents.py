@@ -8,10 +8,15 @@ data = pd.read_csv('data/president_heights.csv', index_col='order')
 # Pandas dataframe
 print(data.head())
 
-# convert pandas Series to numpy array
+# plot heights as histogram
 heights = np.array(data['height(cm)'])
-plt.hist(heights)
+# plt.hist(heights)
+# plt.show()
 
-plt.ioff()
-plt.plot([1, 2, 3, 4], [1, 4, 2, 3])  # Matplotlib plot.
+import seaborn; seaborn.set() # set plot style
+
+plt.hist(heights)
+plt.title('Height Distribution of US Presidents')
+plt.xlabel('height (cm)')
+plt.ylabel('number')
 plt.show()
