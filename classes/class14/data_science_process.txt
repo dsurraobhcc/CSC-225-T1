@@ -1,0 +1,15 @@
+The Data Science Process
+
+Step 1: Frame the problem.
+
+Step 2: Collect the raw data needed for your problem.
+
+Step 3: Process the data for analysis.
+
+Step 4: Explore the data.
+
+
+Step 5: Perform in-depth analysis.
+
+Step 6: Communicate results of the analysis.
+
